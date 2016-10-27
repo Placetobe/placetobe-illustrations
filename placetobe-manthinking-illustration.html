@@ -1,0 +1,70 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../placetobe-behaviors/placetobe-styles-behavior.html">
+<link rel="import" href="../placetobe-behaviors/placetobe-image-behavior.html">
+
+<dom-module id="placetobe-manthinking-illustration">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      :host figcaption {
+        display: block;
+        filter: blur(10px);
+        transition: 0.5s filter ease-in-out;
+      }
+
+      :host([image-loaded]) figcaption {
+        filter: blur(0);
+      }
+
+      :host figcaption img {
+        object-fit: contain;
+        object-position: 50% 50%;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        transition: 0.5s opacity ease-in-out;
+      }
+
+      :host figcaption img[hidden] {
+        opacity: 0;
+        display:block;
+      }
+    </style>
+
+    <figcaption>
+      <img
+        id="placeholder"
+        src$="[[placeholderUrl]]"
+        alt=""
+        >
+    </figcaption>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'placetobe-manthinking-illustration',
+      behaviors: [PlacetobeStylesBehavior, PlacetobeImageBehavior],
+
+      properties: {
+
+        imageUrl: {
+          type: String,
+          value: 'placetobe-manthinking-illustration.png'
+        },
+
+        placeholderUrl: {
+          type: String,
+          value: function() {
+            return 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAALEwAACxMBAJqcGAAAAVlpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KTMInWQAAAW1JREFUGBllj7tLA0EQh2d27y4XSWKiNiqCNr5AFFGws7DRQixEQbtgJwhW1oKNKJbaiKClZyGWVqlsFP8AEQn4iEG5qEnubu+165ytA8swyzff/haUUlje3jaB6nZnb3a/uPEJ6anlZLaWlnjS/9XP8emROr9Uu2sb39cHhz0JYFnWH4yqVDJ/yq9FPxCNpvDn+to7Vmt27fltc314FMBRAAj0Kqs/PG21Ah7JppPLcW0cwxDUyOBLd+AtVqtv8xeWxRBRYuPk7EpkM731ybH7wP5asT1hDgz1Q2s+DxEt1Wz7ptF4X0Dl+Xf1UExwkPDoCig7npopZDECjCmibCu065Vq5ZCBaXRmszmQYRh+NF0lohgZY0DZkk+g6zlgplLTjAZdCA8cx2VV3wfSEAMKASV1kFICZcwkYMS5Bn4Q8CbdGRpHTdORa5zETNN1nTZVWiOwppTs0g3DDt2oxSBbHMcBHRKhdF3XILv3C6jdqeemZAYNAAAAAElFTkSuQmCC'
+          }
+        }
+
+      }
+
+    });
+  </script>
+</dom-module>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <title>placetobe-illustrations demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <script>
+      window.Polymer = {
+        useNativeCSSProperties: true,
+        lazyRegister: true,
+        //dom: 'shadow'
+      };
+    </script>
+    
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+
+    <link rel="import" href="../placetobe-illustrations.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+      demo-snippet {
+        --demo-snippet-demo: {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="vertical-section-container centered">
+      <h3>Man Holding Key</h3>
+      <demo-snippet>
+        <template>
+          <placetobe-manholdingkey-illustration></placetobe-manholdingkey-illustration>
+        </template>
+      </demo-snippet>
+      <h3>Man Thinking</h3>
+      <demo-snippet>
+        <template>
+          <placetobe-manthinking-illustration></placetobe-manthinking-illustration>
+        </template>
+      </demo-snippet>
+      <h3>Man Reading</h3>
+      <demo-snippet>
+        <template>
+          <placetobe-manreading-illustration></placetobe-manreading-illustration>
+        </template>
+      </demo-snippet>
+    </div>
+
+  </body>
+</html>
